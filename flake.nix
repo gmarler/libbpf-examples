@@ -45,7 +45,7 @@
               rust-analyzer
             ];
             nativeBuildInputs = with pkgs; [
-              pkg-config # Essential fro finding C/C++ libraries
+              pkg-config # Essential for finding C/C++ libraries
             ];
             RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}"; # Optional, for some tools
 
@@ -53,7 +53,9 @@
             env = { };
 
             # Add any shell logic you want executed when the environment is activated
-            shellHook = "";
+            shellHook = "
+              set -o vi
+              ";
           };
         }
       );
